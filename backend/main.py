@@ -41,7 +41,6 @@ async def analyze_image(data: ImageData):
     try:
 
 
-        # декодирование изображения
         img_bytes = base64.b64decode(data.img.split(",")[1])
         nparray = np.frombuffer(img_bytes, np.uint8)
         img = cv2.imdecode(nparray, cv2.IMREAD_COLOR)
