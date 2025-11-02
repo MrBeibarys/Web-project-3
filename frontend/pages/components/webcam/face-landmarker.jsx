@@ -51,11 +51,12 @@ export function FaceLandmarksDetection({ onCapture, isReal }) {
 
   return (
     <div className="relative">
-      <Webcam height={480} width={680} ref={webcamRef} className="object-cover h-120 w-170"/>
+      <Webcam height={480} width={488} ref={webcamRef} className=" h-[480px] w-[488px]"/>
       <canvas
         height={480}
-        width={680}
-        className="absolute inset-0 h-120 w-170"
+        width={488}
+        ref={canvasref}
+        className=" absolute top-0 left-0 h-[480px] w-[488px]"
         screenshotFormat="image/jpeg"
         screenshotQuality={0.4}
       />
