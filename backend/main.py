@@ -180,4 +180,20 @@ async def add_bilimclass(data: add_bilimclass):
         return {"status": "success", "login": data.bilim_login}    
     except:
         return {"status": "error"}
-    
+
+@app.delete("/delete_users")
+async def delete_users():
+    try:
+        users_path = "users.json"
+        
+        # Проверяем, существует ли файл
+        if os.path.exists(users_path):
+            # Открываем файл и записываем пустой список
+            with open(users_path, "w", encoding="utf-8") as f:
+                json.dump([], f, ensure_ascii=False, indent=2)  # Пишем пустой массив
+            return {"status": "success", "message": "Все пользователи удалены из файла"}
+        else:
+            return {"status": "error", "message": "Файл с пользователями не найден"}
+    except Exception as e:
+        print(f"Ошибка при очистке данных пользователей: {e}")
+        return {"status": "error", "message": str(e)}

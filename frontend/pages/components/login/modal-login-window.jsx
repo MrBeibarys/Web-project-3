@@ -41,7 +41,7 @@ function login() {
       .then((res) => res.json())
       .then((data) => {
 
-        if (data.status = "success") {
+        if (data.status == "success") {
           console.log("Ответ от сервера:", data);
           alert("Вход прошел успешно!");
           sessionStorage.setItem("login", data.login);
