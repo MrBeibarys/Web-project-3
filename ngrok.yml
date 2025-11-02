@@ -1,0 +1,11 @@
+version: "2"
+authtoken: 2xush8I40ovc7UAqHka9do4Bmtp_3gZcYmiXcczRQkzSB1LPg  # замени на свой токен
+tunnels:
+  web-app:
+    proto: http
+    addr: 3000
+    subdomain: myapp-3000 
+  api-server:
+    proto: http
+    addr: 3429
+    subdomain: api-3429

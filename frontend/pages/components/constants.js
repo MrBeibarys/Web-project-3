@@ -1,0 +1,1 @@
+export const API_DOMEN = "https://api-3429.in.ngrok.io"
